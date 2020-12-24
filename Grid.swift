@@ -28,7 +28,7 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
             item in
             viewForItem(item)
                 .frame(width: layout.itemSize.width, height: layout.itemSize.height)
-                .position(layout.location(ofItemAt: items.firstIndex(matching: item)))
+                .position(layout.location(ofItemAt: items.firstIndex(matching: item)!))
         }
     }
 }
