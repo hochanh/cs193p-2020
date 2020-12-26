@@ -21,8 +21,8 @@ class EmojiMemoryGame: ObservableObject {
     
     static let themes: [[String]] = [
         ["🤣", "😎", "😱", "😇", "😙"],
-        ["🐱", "🐭", "🐨", "🐽", "🙊", "🙉", "🙈", "🐔", "🦆", "🦉", "🐜"],
-        ["📞", "📻", "⏳", "💸", "💵", "🔨", "🧱"],
+        ["🐱", "🐭", "🐨", "🐽", "🙊"],
+        ["📞", "📻", "⏳", "💸", "💵"],
     ]
     
     // MARK: - Access to model
@@ -33,5 +33,9 @@ class EmojiMemoryGame: ObservableObject {
     // MARK: - Intents
     func choose(card: MemoryGame<String>.Card) {
         model.choose(card: card)
+    }
+    
+    func resetGame() {
+        model = EmojiMemoryGame.createMemoryGame()
     }
 }
